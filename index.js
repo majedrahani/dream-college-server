@@ -33,6 +33,12 @@ async function run() {
       const result = await dreamCollegeCollections.findOne(query);
       res.send(result);
     });
+    app.get('/apply/:id', async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: new ObjectId(id) };
+      const result = await dreamCollegeCollections.findOne(query);
+      res.send(result);
+    });
     
     app.get('/colleges', async (req, res) => {
       const cursor = dreamCollegeCollections.find();
